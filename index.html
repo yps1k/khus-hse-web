@@ -93,12 +93,26 @@ input::placeholder{color:var(--faint)}
 .modal .glass{max-width:560px;width:100%;max-height:88vh;overflow:auto;padding:22px}
 @media (max-width:760px){
   #app{flex-direction:column}
-  #sidebar{position:static;width:auto;height:auto;flex-direction:row;flex-wrap:wrap;gap:6px;top:auto;
+  #sidebar{
+    position:sticky;top:0;z-index:20;width:auto;height:auto;flex:0 0 auto;
+    flex-direction:row;flex-wrap:wrap;align-items:center;gap:10px;
+    border-radius:0 0 var(--radius) var(--radius);
+    padding:10px max(14px,env(safe-area-inset-left,0px)) 10px max(14px,env(safe-area-inset-right,0px))}
+  .avatarbtn{order:1;margin:0;flex:0 0 auto}
+  .avatarbtn img,.avatarbtn .ph{width:40px;height:40px;border-width:2px}
+  .sidefoot{order:2;margin:0 0 0 auto;flex-direction:row;align-items:center;gap:8px;flex:0 0 auto;padding:0}
+  .copyr{display:none}
+  #navItems{order:3;flex:1 1 100%;display:flex;flex-direction:row;flex-wrap:nowrap;gap:8px;
+    overflow-x:auto;padding-bottom:2px;scrollbar-width:none}
+  #navItems::-webkit-scrollbar{display:none}
+  .navitem{flex:0 0 auto;width:auto;padding:8px 14px;border-radius:999px;background:var(--glass);border:1px solid var(--card-brd)}
+  .navitem.active{background:var(--accent);color:#fff}
+  #content{padding:16px;max-width:none;
     padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-  .avatarbtn{order:-1}.sidefoot{flex-direction:row;margin:0}
-  .navitem{width:auto}
-  #content{padding:16px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+  h1.page{font-size:1.3rem}
+  .copyr-m{display:block;text-align:center;color:var(--faint);font-size:.68rem;padding:14px 0 4px}
 }
+.copyr-m{display:none}
 </style>
 </head>
 <body>
